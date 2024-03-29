@@ -15,3 +15,14 @@ func TestGoRoutines(t *testing.T) {
 	fmt.Println("Hehehehe")
 	time.Sleep(1 * time.Second)
 }
+
+func DisplayNumber(number int) {
+	fmt.Println("This is", number)
+}
+
+func TestManyGoRoutines(t *testing.T) {
+	for i := 0; i < 100000; i++ {
+		go DisplayNumber(i)
+	}
+	time.Sleep(1 * time.Second)
+}
